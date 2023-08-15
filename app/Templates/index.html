@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Movie Playlist</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Search for Movie Playlist on Spotify</h1>
+    <input type="text" id="movieName" placeholder="Enter movie name">
+    <button onclick="search()">Search</button>
+    <div id="results"></div>
+    <script>
+        function search() {
+            const movieName = document.getElementById('movieName').value;
+            $.get(`http://localhost:5000/search_playlist?movie_name=${movieName}`, function(data, status){
+                $('#results').empty();
+                data.forEach(function(playlist){
+                    $('#results').append(`
+                        <div>
+                            <h2>${playlist.name}</h2>
+                            <a href="${playlist.external_urls.spotify}" target="_blank">Open on Spotify</a>
+                        </div>
+                    `);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

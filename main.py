@@ -4,8 +4,8 @@ import base64
 
 app = Flask(__name__)
 
-CLIENT_ID = 'cd73ebdde5714a1cb42331c146cdb06e'
-CLIENT_SECRET = 'afde5bb5a16049d885aa13e93f5187de'
+CLIENT_ID = 'hidden'
+CLIENT_SECRET = 'hidden'
 
 SPOTIFY_TOKEN_URL = 'https://accounts.spotify.com/api/token'
 SPOTIFY_SEARCH_URL = 'https://api.spotify.com/v1/search'
